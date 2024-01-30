@@ -53,7 +53,8 @@
                         <h1 id="name">Nama Anda</h1>
                         <h3 id="role">Full Stack Engineer</h3>
                         <div id="buttons" class="mt-5">
-                            <button type="button" class="btn btn-primary">Kontak</button>
+                            <button type="button" class="btn btn-primary" data-bs-toggle="collapse"
+                                data-bs-target="#collapseEditForm">Edit</button>
                             <button type="button" class="btn btn-outline-success">Resume</button>
                         </div>
                     </div>
@@ -79,41 +80,43 @@
             </div>
         </div>
 
-        <div id="form" class="card bg-white mt-4 px-3">
-            <form action="" id="profileForm">
-                <div class="mb-2">
-                    <label for="nameInput" class="form-label">Name</label>
-                    <input type="text" class="form-control form-control-sm" id="nameInput">
-                </div>
-                <div class="mb-2">
-                    <label for="roleInput" class="form-label">Role</label>
-                    <input type="text" class="form-control form-control-sm" id="roleInput">
-                </div>
-                <div class="mb-2">
-                    <label for="availabilityInput" class="form-label">Availability</label>
-                    <input type="text" class="form-control form-control-sm" id="availabilityInput">
-                </div>
-                <div class="mb-2">
-                    <label for="ageInput" class="form-label">Age</label>
-                    <input type="number" class="form-control form-control-sm" id="ageInput">
-                </div>
-                <div class="mb-2">
-                    <label for="locationInput" class="form-label">Location</label>
-                    <input type="text" class="form-control form-control-sm" id="locationInput">
-                </div>
-                <div class="mb-2">
-                    <label for="experienceInput" class="form-label">Years Experience</label>
-                    <input type="number" class="form-control form-control-sm" id="experienceInput">
-                </div>
-                <div class="mb-3">
-                    <label for="emailInput" class="form-label">Email</label>
-                    <input type="email" class="form-control form-control-sm" id="emailInput">
-                </div>
+        <div class="collapse show" id="collapseEditForm">
+            <div id="form" class="card bg-white mt-4 p-3">
+                <form action="" id="profileForm">
+                    <div class="mb-2">
+                        <label for="nameInput" class="form-label">Name</label>
+                        <input type="text" class="form-control form-control-sm" id="nameInput">
+                    </div>
+                    <div class="mb-2">
+                        <label for="roleInput" class="form-label">Role</label>
+                        <input type="text" class="form-control form-control-sm" id="roleInput">
+                    </div>
+                    <div class="mb-2">
+                        <label for="availabilityInput" class="form-label">Availability</label>
+                        <input type="text" class="form-control form-control-sm" id="availabilityInput">
+                    </div>
+                    <div class="mb-2">
+                        <label for="ageInput" class="form-label">Age</label>
+                        <input type="number" class="form-control form-control-sm" id="ageInput">
+                    </div>
+                    <div class="mb-2">
+                        <label for="locationInput" class="form-label">Location</label>
+                        <input type="text" class="form-control form-control-sm" id="locationInput">
+                    </div>
+                    <div class="mb-2">
+                        <label for="experienceInput" class="form-label">Years Experience</label>
+                        <input type="number" class="form-control form-control-sm" id="experienceInput">
+                    </div>
+                    <div class="mb-3">
+                        <label for="emailInput" class="form-label">Email</label>
+                        <input type="email" class="form-control form-control-sm" id="emailInput">
+                    </div>
 
-                <div class="d-grid mb-3">
-                    <button type="submit" class="btn btn-success">SUBMIT</button>
-                </div>
-            </form>
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-success">Submit</button>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 </body>
@@ -150,6 +153,8 @@
             oldEmail.innerHTML = `<a href="mailto:${newEmail}">${newEmail}</a>`
 
             profileForm.reset()
+
+            new bootstrap.Collapse("#collapseEditForm", { hide: true })
         })
     </script>
 </footer>
