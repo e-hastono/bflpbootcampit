@@ -104,8 +104,8 @@
                         <input type="text" class="form-control form-control-sm" id="locationInput">
                     </div>
                     <div class="mb-2">
-                        <label for="experienceInput" class="form-label">Years Experience</label>
-                        <input type="number" class="form-control form-control-sm" id="experienceInput">
+                        <label for="yearsExperienceInput" class="form-label">Years Experience</label>
+                        <input type="number" class="form-control form-control-sm" id="yearsExperienceInput">
                     </div>
                     <div class="mb-3">
                         <label for="emailInput" class="form-label">Email</label>
@@ -123,6 +123,24 @@
 
 <footer>
     <script>
+        window.onload = (event) => {
+            const oldName = document.getElementById("name")
+            const oldRole = document.getElementById("role")
+            const oldAvailability = document.getElementById("availability")
+            const oldAge = document.getElementById("age")
+            const oldLocation = document.getElementById("location")
+            const oldYearsExperience = document.getElementById("yearsExperience")
+            const oldEmail = document.getElementById("email")
+
+            document.getElementById("nameInput").value = oldName.innerText
+            document.getElementById("roleInput").value = oldRole.innerText
+            document.getElementById("availabilityInput").value = oldAvailability.innerText
+            document.getElementById("ageInput").value = oldAge.innerText
+            document.getElementById("locationInput").value = oldLocation.innerText
+            document.getElementById("yearsExperienceInput").value = oldYearsExperience.innerText
+            document.getElementById("emailInput").value = oldEmail.innerText
+        }
+
         const profileForm = document.getElementById("profileForm")
 
         profileForm.addEventListener("submit", (event) => {
@@ -152,7 +170,7 @@
             oldYearsExperience.innerText = newYearsExperience
             oldEmail.innerHTML = `<a href="mailto:${newEmail}">${newEmail}</a>`
 
-            profileForm.reset()
+            // profileForm.reset()
 
             new bootstrap.Collapse("#collapseEditForm", { hide: true })
         })
